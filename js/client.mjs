@@ -14,26 +14,29 @@ container.addEventListener('mousemove', function(event){
   const quotientX = posX / innerWidth;
   const quotientY = posY / innerHeight;
 
-  const width1 = 1 * quotientX;
-  const width2 = 1 - width1;
-
-  const height1 = 1 * quotientY;
-  const height2 = 1 - height1;
-
-  root.style.setProperty("--width1", `${width1}fr`);
-  root.style.setProperty("--width2", `${width2}fr`);
-
-  root.style.setProperty("--height1", `${height1}fr`);
-  root.style.setProperty("--height2", `${height2}fr`);
-
   // console.log(imgDiv);
   let shim;
 
   if (imgDiv.offsetHeight > innerHeight * quotientY) {
     shim = 'shim';
+
   } else {
     shim = '';
   }
+
+  const width1 = innerWidth * quotientX;
+  const width2 = innerWidth - width1;
+
+  const height1 = innerHeight * quotientY;
+  const height2 = innerHeight - height1;
+
+  root.style.setProperty("--width1", `${width1}px`);
+  root.style.setProperty("--width2", `${width2}px`);
+
+  root.style.setProperty("--height1", `${height1}px`);
+  root.style.setProperty("--height2", `${height2}px`);
+
+
   output.value = `W:${imgDiv.offsetWidth}\nH: ${imgDiv.offsetHeight} ${shim}`;
 
   // console.log(width1, width2, width1 + width2);
