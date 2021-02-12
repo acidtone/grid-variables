@@ -1,0 +1,38 @@
+:root {
+  --width1: 1fr;
+  --width2: 1fr;
+
+  --height1: 1fr;
+  --height2: 1fr;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  min-height: 100vh;
+
+  grid-template-columns: var(--width1) var(--width2);
+  grid-template-rows: var(--height1) var(--height2);
+
+
+  background-color: rebeccapurple;
+}
+
+div {
+  background-color: skyblue;
+  border: 2px solid rebeccapurple;
+}
+
+.overflow {
+  overflow: scroll;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
